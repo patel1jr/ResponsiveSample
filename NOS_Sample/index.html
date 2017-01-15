@@ -390,7 +390,6 @@ $( document ).ready(function() {
 
  
 $('#mytable tbody').on( 'click', 'tr', function () {
-debugger;
     currentRow=table.row( this );
 $("#updateManufacturerOfCar").val(currentRow.data()[0]);
 $("#updateMakeOfCar").val(currentRow.data()[1]);
@@ -399,44 +398,12 @@ $("#updateColourOfCar").val(currentRow.data()[3]);
 $("#updatePassengerSeating").val(currentRow.data()[4]);
 
 } );
-
-
-$("#mytable #checkall").click(function () {
-   
-     if ($("#mytable #checkall").is(':checked')) {
-   
-         $("#mytable input[type=checkbox]").each(function () {
-       
-         $(this).prop("checked", true);
-         
-   });
-
-       
- }
-else {
-         
-   $("#mytable input[type=checkbox]").each(function () {
-      
-          $(this).prop("checked", false);
-          
-  });
-      
-  }
-   
- });
-    
- 
-
-   $("[data-toggle=tooltip]").tooltip();
-
-
-
 });
 
 
 function Update()
 {
-alert("In update");
+
 
 currentRow.data()[0]=$("#updateManufacturerOfCar").val();
 currentRow.data()[1]=$("#updateMakeOfCar").val();
@@ -460,7 +427,6 @@ $('#edit').modal('toggle');
 
 function Delete()
 {
-alert("In delete");
 var table = $('#mytable').DataTable();
     table
         .row( currentRow )
